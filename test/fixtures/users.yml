@@ -1,0 +1,40 @@
+michael:
+  name: Michael Example
+  email: michael@example.com
+  phone_number: 910000000
+  street: "Street"
+  zip_code: 12345
+  city: "LA"
+  country: "USA"
+  password_digest: <%= User.digest('password') %>
+  admin: true
+
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
+  phone_number: 910000000
+  password_digest: <%= User.digest('password') %>
+
+lana:
+  name: Lana Kane
+  email: hands@example.gov
+  phone_number: 910000000
+  password_digest: <%= User.digest('password') %>
+
+malory:
+  name: Malory Archer
+  email: boss@example.gov
+  phone_number: 910000000
+  password_digest: <%= User.digest('password') %>
+  
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  phone_number: 910000000
+  street: "Street"
+  zip_code: <%= "#{n}" %>
+  city: "LA"
+  country: "USA"
+  password_digest: <%= User.digest('password') %>
+<% end %>
